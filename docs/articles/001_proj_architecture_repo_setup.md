@@ -77,13 +77,13 @@ Once the query embedding has been generated, the retriever communicates with `ve
 The retriever may optionally perform additional retrieval enhancements depending on the configuration:
 
 1.  `retrieval/hybrid.py` combines dense retrieval with keyword-based retrieval such as BM25.
-    
+
 2.  `retrieval/query_expansion.py` expands or rewrites the user's query to improve retrieval quality.
-    
+
 3.  `retrieval/filters.py` applies metadata-based filtering, such as restricting results to papers from a particular year, author, or research area.
-    
+
 4.  `retrieval/reranker.py` reranks the retrieved chunks using a stronger cross-encoder model to improve relevance before passing them to the LLM.
-    
+
 
 The behaviour of these retrieval strategies is controlled by configuration files inside `config/retrieval/`, including `retrieval_config.py` and `chunking_config.py`.
 
@@ -92,9 +92,9 @@ After retrieval is complete, the retriever returns the top-k document chunks bac
 At this point, the chat service now possesses two pieces of information:
 
 1.  the original user question
-    
+
 2.  the retrieved contextual chunks
-    
+
 
 The chat service forwards both to `llm/generator.py`.
 
@@ -157,17 +157,17 @@ Finally, `project_setup.py` bootstraps the project structure during development,
 ### Questions I still have:
 
 *   How will I automatically collect and maintain a corpus of AI research papers? Should I use the arXiv API, Semantic Scholar, or manually curate papers initially?
-    
+
 *   How many papers should Version 1 realistically index? Is 100 enough to demonstrate the system, or should I start with fewer?
-    
+
 *   If I index 100 papers, will the embedding model struggle? Does embedding time or memory become a bottleneck?
-    
+
 *   Where should I store metadata such as authors, publication dates, categories, and arXiv IDs so that I can later implement metadata filtering?
-    
+
 *   Should I embed every paper from scratch whenever I add a new one, or only embed newly added documents and append them to the existing vector database?
-    
+
 *   When should I rebuild the entire vector index, and when can I simply update it incrementally?
-    
+
 
 ### Conclusion:
 

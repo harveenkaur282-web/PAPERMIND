@@ -4,6 +4,7 @@ from main import app
 
 client = TestClient(app)
 
+
 def test_root_endpoint():
     response = client.get("/")
 
@@ -13,6 +14,7 @@ def test_root_endpoint():
 
     assert "message" in data
     assert "version" in data
+
 
 def test_health_endpoint():
     response = client.get("/health")
