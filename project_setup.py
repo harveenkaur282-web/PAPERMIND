@@ -30,7 +30,6 @@ directories = [
 
 files = [
     "main.py",
-    "requirements.txt",
     ".env.example",
     "Dockerfile",
     "docker-compose.yml",

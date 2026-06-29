@@ -27,7 +27,7 @@ def print_tree(path: Path, prefix=""):
             print_tree(entry, prefix + extension)
 
 
-root = Path.cwd()      # ← this was missing
+root = Path.cwd()     
 
 print(root.name)
 print_tree(root)
