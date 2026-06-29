@@ -11,10 +11,11 @@ IGNORE = {
     ".vscode",
 }
 
+
 def print_tree(path: Path, prefix=""):
     entries = sorted(
         [p for p in path.iterdir() if p.name not in IGNORE],
-        key=lambda x: (x.is_file(), x.name.lower())
+        key=lambda x: (x.is_file(), x.name.lower()),
     )
 
     for i, entry in enumerate(entries):
@@ -27,7 +28,7 @@ def print_tree(path: Path, prefix=""):
             print_tree(entry, prefix + extension)
 
 
-root = Path.cwd()     
+root = Path.cwd()
 
 print(root.name)
 print_tree(root)

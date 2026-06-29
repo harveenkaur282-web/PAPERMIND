@@ -1,5 +1,6 @@
-import feedparser
 from pprint import pprint
+
+import feedparser
 
 RSS_URL = "https://buildingthings.hashnode.dev/rss.xml"
 

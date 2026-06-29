@@ -29,4 +29,3 @@ logger.add(
 )
 
 logger.info("Logger initialized.")
-
